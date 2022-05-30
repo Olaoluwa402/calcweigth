@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <script src="./js/scripts.js"></script>
+    <title>Object Weight Calculator In Planets</title>
+</head>
+<body>
+    <div class="container" id="particles-js">
+        <h1>Calculate the Weight of an Object in a planet</h1>
+        <div class="calculator-screen">
+            <div class="calculator-screen-input">
+                <input type='text' placeholder="mass in kilogram" class='mass'/>
+                <select name="planet" id="planet" class="planet">
+                    <option value="">Select a planet</option>
+                    <option value="earth">Earth</option>
+                    <option value="moon">Moon</option>
+                    <option value="pluto">Pluto</option>
+                    <option value="mars">Mars</option>
+                    <option value="jupiter">Jupiter</option>
+                    <option value="saturn">Saturn</option>
+                    <option value="uranus">Uranus </option>
+                    <option value="neptune">Neptune</option>
+                    <option value="venus">Venus</option>
+                    <option value="mercury">Mercury</option>
+                </select>
+                <button class='calc-btn'>calulate weight</button>
+            </div>
+            <div class="calculator-screen-output">
+                <img src="./images/globe-png.png" alt="globe">
+                <div class="output-result">
+                    <!-- <p>The weight of the object on <b>Earth</b></p>
+                    <div class="output-value">
+                        <span>7.00N</span>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

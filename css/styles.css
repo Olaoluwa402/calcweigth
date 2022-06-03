@@ -16,7 +16,7 @@ body{
 }
 /* global */
     img{
-        width:100%
+        width:100%;
     }
     ul{
         padding: 0;
@@ -80,7 +80,7 @@ body{
 
         .calculator-screen-output img{
             width: 300px;
-            width: 300px;
+            height: 300px;
             margin-right: 4rem;
         }
 
@@ -103,7 +103,20 @@ body{
         }
     /* End output */
 
+.alert{
+    width: 50%;
+    margin: 2px auto;
+    text-align: center;
+    padding: 10px;
+}
 
+.alert-danger{
+    background-color: red;
+}
+
+.alert-success{
+    background-color: green;
+}
 /* End screen */
 
 /* End of container */

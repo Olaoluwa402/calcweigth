@@ -58,7 +58,8 @@ function calculateWeight(e){
    const mass = Number(document.getElementsByClassName('mass')[0].value)
    const planet = document.getElementsByClassName('planet')[0].value
    if(!mass || !planet || isNaN(mass)){
-       alert('Mass is required, Pls enter a valid number')
+    //    alert('Mass is required, Pls enter a valid number')
+    alertMessage('Mass is required, Pls enter a valid number', 'danger')
        return;
    }
   // search
@@ -77,6 +78,8 @@ function calculateWeight(e){
             </div>
             `
         outputResult.innerHTML = outputContent
+
+        alertMessage('Successful', 'success')
   }
 }
 
@@ -88,5 +91,20 @@ function search(planets, planet){
         }
     }
     return null
+}
+
+function alertMessage(message, className){
+    const div = document.createElement('div')
+          div.className = `alert alert-${className}`
+          const txt = document.createTextNode(message)
+          div.appendChild(txt)
+
+          const container = document.getElementsByClassName('calculator-screen')[0]
+          const calculatorScreen = document.getElementsByClassName('calculator-screen-output')[0]
+          container.insertBefore(div, calculatorScreen)
+
+          setTimeout(()=>{
+            document.getElementsByClassName('alert')[0].remove()
+          }, 3000)
 }
 

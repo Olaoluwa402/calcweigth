@@ -7,9 +7,33 @@ if(document.readyState == 'loading'){
 const {log} = console;
 
 function ready(){
+
     const calcBtn = document.getElementsByClassName('calc-btn')[0]
         calcBtn.addEventListener('click', calculateWeight)
+        AsyncAwaitUsers()
 }
+
+// using promises
+function fetchUsers(){
+    const url = 'https://jsonplaceholder.typicode.com/users'
+    fetch(url).then((response)=> response.json()).then((data)=> {
+      localStorage.setItem('users', JSON.stringify(data))
+    }).catch(err =>log(err))
+}
+
+// using asyn await
+async function AsyncAwaitUsers(){
+    const url = 'https://jsonplaceholder.typicode.com/users'
+    try{
+        const response = await fetch(url);
+        const users = await response.json()
+        log(users)
+        localStorage.setItem('users', JSON.stringify(users))
+    }catch(err){
+        log(err)
+    }
+}
+
 
 const planets = [
     {
@@ -53,6 +77,24 @@ const planets = [
         gravity:1.62
     }
 ]
+
+function login(){
+    const users = getUsers()
+ 
+    // users.forEach((user,i) =>{
+
+    // })
+}
+
+function getUsers(){
+    let users = localStorage.getItem('users');
+    if(!users){
+        users = []
+    }else{
+        users = JSON.parse(users)
+}
+return users
+}
 
 function calculateWeight(e){
    const mass = Number(document.getElementsByClassName('mass')[0].value)
